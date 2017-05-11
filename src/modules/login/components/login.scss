@@ -1,0 +1,16 @@
+.login{
+  .login-form{
+    width: 50%;
+    margin: 0 auto;
+
+    .login-label, .password-label{
+      text-align: left;
+      padding-left: 10px;
+    }
+  }
+
+  .login-button {
+    margin-top: 10px;
+  }
+
+}

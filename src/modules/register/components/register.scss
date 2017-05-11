@@ -1,0 +1,16 @@
+.register{
+
+  .register-form{
+    width: 50%;
+    margin: 0 auto;
+    .login-label, .password-label{
+      text-align: left;
+      padding-left: 10px;
+    }
+  }
+
+  .register-button {
+    margin-top: 10px;
+  }
+
+}
