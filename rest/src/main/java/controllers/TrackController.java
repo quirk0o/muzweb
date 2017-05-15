@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/tracks")
+@CrossOrigin(origins = "http://localhost:9000")
 public class TrackController {
 
     @Autowired
@@ -25,7 +26,13 @@ public class TrackController {
         return trackService.voteForTrack(id, vote);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value ="/search/{prefix}", method = RequestMethod.GET)
+    public List<Track> searchByPrefix(@PathVariable String prefix) {
+        return prefix != null ? trackService.searchByname(prefix) :
+                trackService.searchByname("");
+    }
+
+    @RequestMapping(value = "/find/{id}", method = RequestMethod.GET)
     public Track getTrackById(@PathVariable Long id) {
         return trackService.getTrackById(id);
     }

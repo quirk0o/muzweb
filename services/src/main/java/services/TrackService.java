@@ -40,4 +40,7 @@ public class TrackService {
         return track;
     }
 
+    public List<Track> searchByname(String prefix) {
+        return trackRepository.findByNameStartsWith(prefix);
+    }
 }

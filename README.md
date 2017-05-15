@@ -10,6 +10,7 @@
 - Example module
 
 ## Prerequisites
+- JDK 1.8
 - yarn
 - maven
 - postgres 9.4, db "muzweb" running on port 5432 with owner "postgres", password to db: "1234"

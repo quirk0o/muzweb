@@ -1,0 +1,28 @@
+.trackForm{
+  margin-top: 20px;
+
+  .trackForm-form{
+    width: 30%;
+    margin: 20px auto;
+
+    .trackForm-label{
+      text-align: left;
+      padding-left: 10px;
+    }
+  }
+
+  .trackForm-segment {
+    width: 30%;
+    margin: auto;
+  }
+
+  .trackForm-dropdown {
+    margin-right: 20px;
+  }
+
+  .trackForm-button {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+
+}

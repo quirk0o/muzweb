@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/authors")
+@CrossOrigin(origins = "http://localhost:9000")
 public class AuthorController {
 
     @Autowired
@@ -21,8 +22,7 @@ public class AuthorController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Author getAuthorById(@PathVariable Long id) {
-        return authorService.getAuthorById(id);
+    public Author getAuthorById(@PathVariable Long id) { return authorService.getAuthorById(id);
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
