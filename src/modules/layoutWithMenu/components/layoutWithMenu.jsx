@@ -2,12 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Container, Menu, Header, Search} from 'semantic-ui-react'
 import {NavLink} from 'react-router-dom'
+
+import './layoutWithMenu.scss'
 import TrackService from '../../../services/TrackService'
 
-import './home.scss'
-import LayoutWithMenu from '../../layoutWithMenu/components/layoutWithMenu'
-
-class Home extends React.Component {
+class LayoutWithMenu extends React.Component {
 
   constructor() {
     super()
@@ -27,7 +26,7 @@ class Home extends React.Component {
 
   onResultSelect(event, data) {
     console.log(data)
-    this.props.history.push(`/track/${data.id}`)
+    this.context.router.history.push(`/track/${data.id}`)
   }
 
   render() {
@@ -39,18 +38,31 @@ class Home extends React.Component {
     return (
       <div className="layout container">
         <Container>
-          <Header as="h1">Muzweb</Header>
-          <LayoutWithMenu/>
+          <Menu color="teal" className="top navbar">
+            <Menu.Item as={NavLink} exact to="/home">Muzweb</Menu.Item>
+            <Menu.Item as={NavLink} exact to="/addTrack">Add Track</Menu.Item>
+            <Menu.Item as={NavLink} exact to="/addAuthor">Add Artist</Menu.Item>
+            <div className="menu-right">
+              <Search onSearchChange={this.onSearchPrefixChange}
+                      results={searchResults}
+                      onResultSelect={this.onResultSelect} />
+              <Menu.Item as={NavLink} to="/">Logout</Menu.Item>
+            </div>
+          </Menu>
+
           {this.props.children}
         </Container>
       </div>
     )
   }
-
 }
 
-Home.propTypes = {
+LayoutWithMenu.propTypes = {
   children: PropTypes.node
 }
 
-export default Home
+LayoutWithMenu.contextTypes = {
+  router: PropTypes.object.isRequired
+}
+
+export default LayoutWithMenu
