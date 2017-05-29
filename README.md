@@ -24,5 +24,6 @@ mvn clean install
 ## Scripts
 - `cd web` => `mvn spring-boot:run`
 - `npm start`
+- `npm run-script start_windows`
 - `npm package`
 - `npm test`
