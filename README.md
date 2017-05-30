@@ -1,13 +1,4 @@
-# React Seed
-
-## Included
-- React
-- ES7 & JSX
-- Redux
-- React Router
-- Webpack with Hot Module Replacement
-- Testing setup with Jest and Chai
-- Example module
+# MUZWEB
 
 ## Prerequisites
 - JDK 1.8
