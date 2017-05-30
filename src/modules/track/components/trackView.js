@@ -54,7 +54,7 @@ class TrackView extends React.Component {
                 </Grid.Column>
               </Grid>
             </Popup></Header>
-            <Header as="h4">By {authorName}</Header>
+            <Header as="h4">Aythor: {authorName}</Header>
             <div> {track.description} </div>
           </Container>
         </div>
