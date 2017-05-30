@@ -1,6 +1,6 @@
-import React, {PropTypes} from 'react'
+import React from 'react'
 import NewsService from '../../../services/NewsService'
-import {Container, Header, Form, Button, Rating, Segment} from 'semantic-ui-react'
+import {Container, Header} from 'semantic-ui-react'
 import LayoutWithMenu from 'modules/layoutWithMenu/components/layoutWithMenu'
 
 import './newsView.scss'

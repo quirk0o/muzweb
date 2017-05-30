@@ -1,7 +1,7 @@
 import React from 'react'
 import NewsService from '../../../services/NewsService'
 import LayoutWithMenu from 'modules/layoutWithMenu/components/layoutWithMenu'
-import {Container, Menu, Header, Form, Button, Dropdown} from 'semantic-ui-react'
+import {Container, Header, Form, Button} from 'semantic-ui-react'
 
 import './newsForm.scss'
 
