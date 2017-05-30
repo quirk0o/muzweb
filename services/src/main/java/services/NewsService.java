@@ -28,7 +28,7 @@ public class NewsService {
     }
 
     public List<News> getAllNews(int pageNumber, int pageSize) {
-        List<News> allNews= newsRepository.findAll();
+        List<News> allNews = newsRepository.findAll();
         Assert.isTrue(pageNumber * pageSize <= allNews.size());
         return allNews.subList(pageNumber * pageSize, Math.min((pageNumber + 1) * pageSize, allNews.size()));
     }

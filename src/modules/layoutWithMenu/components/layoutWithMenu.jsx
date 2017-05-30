@@ -42,6 +42,7 @@ class LayoutWithMenu extends React.Component {
             <Menu.Item as={NavLink} exact to="/home">Muzweb</Menu.Item>
             <Menu.Item as={NavLink} exact to="/addTrack">Add Track</Menu.Item>
             <Menu.Item as={NavLink} exact to="/addAuthor">Add Artist</Menu.Item>
+            <Menu.Item as={NavLink} exact to="/addNews">Add News</Menu.Item>
             <div className="menu-right">
               <Search onSearchChange={this.onSearchPrefixChange}
                       results={searchResults}

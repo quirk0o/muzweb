@@ -1,19 +1,19 @@
 package model;
 
 import javax.persistence.Entity;
-import java.sql.Time;
+import java.util.Date;
 
 @Entity
 public class News extends EntityWithId {
 
     private String title;
     private String content;
-    private Time timestamp;
+    private Long timestamp;
 
     public News() {
     }
 
-    public News(String title, String content, Time timestamp) {
+    public News(String title, String content, Long timestamp) {
         this.title = title;
         this.content = content;
         this.timestamp = timestamp;
@@ -35,11 +35,11 @@ public class News extends EntityWithId {
         this.content = content;
     }
 
-    public Time getTimestamp() {
+    public Long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Time timestamp) {
+    public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
 }

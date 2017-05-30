@@ -1,0 +1,32 @@
+.newsView{
+
+  margin: 20px auto auto;
+
+  .newsView-header{
+    margin-top: 20px;
+    padding-left: 30px;
+    text-align: left;
+  }
+
+  .news-single-view{
+    -webkit-box-shadow: 0 0 34px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 34px -5px rgba(0,0,0,0.75);
+    box-shadow: 0 0 34px -5px rgba(0,0,0,0.75);
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  .news-single-title {
+    border-bottom: solid 2px rgb(176, 225, 223);
+  }
+
+  .news-single-timestamp{
+    float: right;
+    text-align: right;
+    font-size: small;
+  }
+
+  .news-single-content{
+    padding: 10px;
+  }
+}

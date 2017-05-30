@@ -1,0 +1,28 @@
+.newsForm{
+  margin-top: 20px;
+
+  .newsForm-form{
+    width: 30%;
+    margin: 20px auto;
+
+    .newsForm-label{
+      text-align: left;
+      padding-left: 10px;
+    }
+  }
+
+  .newsForm-segment {
+    width: 30%;
+    margin: auto;
+  }
+
+  .newsForm-dropdown {
+    margin-right: 20px;
+  }
+
+  .newsForm-button {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+
+}
