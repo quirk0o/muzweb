@@ -19,7 +19,7 @@ class NewsView extends React.Component {
   }
 
   render() {
-    const news = this.state.news.map(function (news) {
+    const news = this.state.news.sort((news1, news2)=>{return news1.timestamp < news2.timestamp}).map(function (news) {
       let date = new Date(news.timestamp);
       let dateToPrint = "Date: "+ date.getDate()+"."+date.getMonth()+"."+date.getFullYear()+" "+date.getHours()+":"+date.getMinutes()
       return <div className="news-single-view">
