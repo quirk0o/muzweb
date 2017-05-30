@@ -7,7 +7,7 @@ import './layout.scss'
 
 const Layout = ({children}) => (
     <div className="layout container">
-        <Container>
+        <Container className="app-container">
             {children}
         </Container>
     </div>

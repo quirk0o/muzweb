@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
 import TrackService from '../../../services/TrackService'
-import {Container, Header, Form, Button, Rating, Segment} from 'semantic-ui-react'
+import {Container, Header, Button, Rating, Popup, Grid} from 'semantic-ui-react'
 import LayoutWithMenu from 'modules/layoutWithMenu/components/layoutWithMenu'
 
 import './trackView.scss'
@@ -39,15 +39,23 @@ class TrackView extends React.Component {
     return (
       <LayoutWithMenu>
         <div className="trackView container">
-          <Container textAlign={'center'}>
-            <Header as="h3" className="trackView-header">Title: {track.name}</Header>
-            <Header as="h4" className="trackView-header">By {authorName}</Header>
+          <Container className="trackView-main" textAlign={'center'}>
+            <Header as="h3" className="trackView-header">Title: {track.name} <Popup
+              trigger={<Button className="trackView-rating-score">Rating: {!!track.rating ? track.rating.toFixed(2) : track.rating}</Button>}
+              flowing
+              hoverable
+            >
+              <Grid centered divided columns={1}>
+                <Grid.Column textAlign='center'>
+                  <div className="trackView-ratingSegment">
+                    <div><Rating className="trackView-rating" icon='star' defaultRating={0} maxRating={10} onRate={this.onRate} /></div>
+                    <div><Button className="trackView-button" onClick={this.handleVote}>Vote</Button></div>
+                  </div>
+                </Grid.Column>
+              </Grid>
+            </Popup></Header>
+            <Header as="h4">By {authorName}</Header>
             <div> {track.description} </div>
-            <div className="trackView-ratingSegment">
-              <span>Rating: {!!track.rating ? track.rating.toFixed(2) : track.rating}</span>
-              <Rating className="trackView-rating" icon='star' defaultRating={0} maxRating={10} onRate={this.onRate} />
-              <Button className="trackView-button" onClick={this.handleVote}>Vote</Button>
-            </div>
           </Container>
         </div>
       </LayoutWithMenu>

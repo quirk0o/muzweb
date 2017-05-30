@@ -1,10 +1,21 @@
-.trackView{
+.trackView {
 
-  margin: auto;
-  margin-top: 20px;
+  margin: 20px auto auto;
+  height: 100%;
 
-  .trackView-header{
+  .trackView-main {
+    height: 80%;
+    -webkit-box-shadow: 0 0 34px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 34px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 34px -5px rgba(0, 0, 0, 0.75);
+    padding: 20px;
+  }
+
+  .trackView-header {
     margin-top: 20px;
+    padding: 20px;
+    text-align: left;
+    border-bottom: solid 2px rgb(176, 225, 223);
   }
 
   .trackView-ratingSegment {
@@ -13,13 +24,15 @@
   }
 
   .trackView-button {
-    margin: auto;
-    margin-top: 10px;
+    margin: 10px auto auto;
   }
 
   .trackView-rating {
-    margin: auto;
-    margin-top: 10px;
+    margin: 10px auto auto;
+  }
+
+  .trackView-rating-score{
+    float: right;
   }
 
 }

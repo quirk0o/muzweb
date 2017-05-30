@@ -37,7 +37,7 @@ class LayoutWithMenu extends React.Component {
       })
     return (
       <div className="layout container">
-        <Container>
+        <Container className="app-container">
           <Menu color="teal" className="top navbar">
             <Menu.Item as={NavLink} exact to="/home">Muzweb</Menu.Item>
             <Menu.Item as={NavLink} exact to="/addTrack">Add Track</Menu.Item>
