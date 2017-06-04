@@ -17,6 +17,10 @@ public class Author extends EntityWithId {
     @JsonIgnoreProperties("author")
     private List<Track> trackList;
 
+    @OneToMany
+    @JoinColumn(name="album_id")
+    private List<Album> albumList;
+
     private Double rating = 0d;
 
     public Author() {
@@ -26,10 +30,15 @@ public class Author extends EntityWithId {
         this.firstName = firstName;
         this.lastName = lastName;
         trackList = new ArrayList<>();
+        albumList = new ArrayList<>();
     }
 
     public void addTrack(Track track) {
         trackList.add(track);
+    }
+
+    public void addAlbum(Album album) {
+        albumList.add(album);
     }
 
     public String getFirstName() {

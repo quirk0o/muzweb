@@ -12,6 +12,9 @@ public class Track extends EntityWithId{
     private String name;
 
     @ManyToOne
+    private Album album;
+
+    @ManyToOne
     @JoinColumn(name="author_id")
     private Author author;
 
