@@ -13,7 +13,6 @@ public class Track extends EntityWithId{
 
     @ManyToOne
     @JoinColumn(name="author_id")
-    @JsonBackReference
     private Author author;
 
     private Double rating = 0d;

@@ -1,10 +1,8 @@
 package model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +14,7 @@ public class Author extends EntityWithId {
     private String lastName;
 
     @OneToMany(mappedBy = "author")
-    @JsonManagedReference
+    @JsonIgnoreProperties("author")
     private List<Track> trackList;
 
     private Double rating = 0d;
