@@ -2,6 +2,7 @@ package controllers;
 
 
 import model.Album;
+import model.Track;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import services.AlbumService;
@@ -35,5 +36,10 @@ public class AlbumController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<Album> getAllAlbums(@RequestParam(value="pgNum") int pgNum, @RequestParam(value="pgSize") int pgSize) {
         return albumService.getAllAlbums(pgNum, pgSize);
+    }
+
+    @RequestMapping(value = "/{id}/tracks", method = RequestMethod.GET)
+    public List<Track> getTracks(@PathVariable(value="id") Long id) {
+        return albumService.getAlbumById(id).getTracks();
     }
 }

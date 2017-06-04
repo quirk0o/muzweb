@@ -17,8 +17,8 @@ public class Author extends EntityWithId {
     @JsonIgnoreProperties("author")
     private List<Track> trackList;
 
-    @OneToMany
-    @JoinColumn(name="album_id")
+    @OneToMany(mappedBy = "author")
+    @JsonManagedReference
     private List<Album> albumList;
 
     private Double rating = 0d;
@@ -63,6 +63,14 @@ public class Author extends EntityWithId {
 
     public void setTrackList(List<Track> trackList) {
         this.trackList = trackList;
+    }
+
+    public List<Album> getAlbumList() {
+        return albumList;
+    }
+
+    public void setAlbumList(List<Album> albumList) {
+        this.albumList = albumList;
     }
 
     public Double getRating() {

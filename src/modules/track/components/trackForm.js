@@ -12,14 +12,15 @@ class TrackForm extends React.Component {
     super()
     this.state = {
       name: '',
-      author: {},
       description: '',
-      possibleAuthors: []
+      possibleAuthors: [],
+      possibleAlbums: []
     }
 
     this.handleCreate = this.handleCreate.bind(this)
     this.handleNameChange = this.handleNameChange.bind(this)
     this.handleAuthorChange = this.handleAuthorChange.bind(this)
+    this.handleAlbumChange = this.handleAlbumChange.bind(this)
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this)
   }
 
@@ -49,7 +50,15 @@ class TrackForm extends React.Component {
 
   handleAuthorChange(event, data) {
     this.setState({
-      author: data.value
+      author: data.value,
+      album: undefined
+    })
+    AuthorService.getAlbums(data.value.id).then(albums => this.setState({possibleAlbums: albums}))
+  }
+
+  handleAlbumChange(event, data) {
+    this.setState({
+      album: data.value
     })
   }
 
@@ -60,7 +69,10 @@ class TrackForm extends React.Component {
         console.log(el)
         return {text: fullName, value: el}
       })
-    console.log(possibleAuthors)
+    const possibleAlbums = this.state.possibleAlbums.map(el => ({text: el.name, value: el}))
+
+    console.log(possibleAuthors, possibleAlbums)
+
     return (
       <LayoutWithMenu>
         <div className="trackForm container">
@@ -76,10 +88,18 @@ class TrackForm extends React.Component {
             </Form>
             <div className="trackForm-segment">
               <Dropdown
+                value={this.state.author || null}
                 className="trackForm-dropdown"
                 options={possibleAuthors}
-                placeholder="author"
+                placeholder="Author"
                 onChange={this.handleAuthorChange}
+              />
+              <Dropdown
+                value={this.state.album || null}
+                className="trackForm-dropdown"
+                options={possibleAlbums}
+                placeholder="Album"
+                onChange={this.handleAlbumChange}
               />
               <Button className="trackForm-button" onClick={this.handleCreate}>Add</Button>
             </div>

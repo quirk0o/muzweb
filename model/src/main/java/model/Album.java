@@ -19,7 +19,7 @@ public class Album extends EntityWithId {
 
     @OneToMany
     @JoinColumn(name="track_id")
-    private List<Track> trackList;
+    private List<Track> tracks;
 
     public Album() {
     }
@@ -27,11 +27,11 @@ public class Album extends EntityWithId {
     public Album(String name, String releaseDate) {
         this.name = name;
         this.releaseDate = releaseDate;
-        trackList = new ArrayList<>();
+        tracks = new ArrayList<>();
     }
 
     public void addTrack(Track track) {
-        trackList.add(track);
+        tracks.add(track);
     }
 
     public String getName() {
@@ -64,5 +64,9 @@ public class Album extends EntityWithId {
 
     public void setAuthor(Author author) {
         this.author = author;
+    }
+
+    public List<Track> getTracks() {
+        return tracks;
     }
 }

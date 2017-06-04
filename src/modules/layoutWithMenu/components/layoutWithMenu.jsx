@@ -51,7 +51,7 @@ class LayoutWithMenu extends React.Component {
           <Menu color="teal" className="top navbar">
             <Menu.Item as={NavLink} exact to="/home">Muzweb</Menu.Item>
             <Menu.Item as={NavLink} exact to="/addTrack">Add Track</Menu.Item>
-            <Menu.Item as={NavLink} exact to="/addAlbum">Add </Menu.Item>
+            <Menu.Item as={NavLink} exact to="/addAlbum">Add Album</Menu.Item>
             <Menu.Item as={NavLink} exact to="/addAuthor">Add Artist</Menu.Item>
             <Menu.Item as={NavLink} exact to="/addNews">Add News</Menu.Item>
             <div className="menu-right">
