@@ -46,7 +46,8 @@ const config = {
     hot: true,
     port: port,
     contentBase: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    publicPath: '/',
+    historyApiFallback: true
   },
   stats: {
     colors: true,
