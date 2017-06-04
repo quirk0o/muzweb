@@ -1,6 +1,9 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -9,6 +12,8 @@ public class Track extends EntityWithId{
     private String name;
 
     @ManyToOne
+    @JoinColumn(name="author_id")
+    @JsonBackReference
     private Author author;
 
     private Double rating = 0d;

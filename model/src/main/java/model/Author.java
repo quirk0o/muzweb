@@ -1,6 +1,9 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
@@ -12,8 +15,8 @@ public class Author extends EntityWithId {
     private String firstName;
     private String lastName;
 
-    @OneToMany
-    @JoinColumn(name="track_id")
+    @OneToMany(mappedBy = "author")
+    @JsonManagedReference
     private List<Track> trackList;
 
     private Double rating = 0d;
@@ -45,5 +48,21 @@ public class Author extends EntityWithId {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public List<Track> getTrackList() {
+        return trackList;
+    }
+
+    public void setTrackList(List<Track> trackList) {
+        this.trackList = trackList;
+    }
+
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setRating(Double rating) {
+        this.rating = rating;
     }
 }

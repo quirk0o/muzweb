@@ -13,7 +13,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan({
         "services", "repositories", "controllers"
 })
-@CrossOrigin(origins = "*")
 public class App {
 
     public static void main(String[] args) {
