@@ -9,7 +9,7 @@ import TrackForm from 'modules/track/components/trackForm'
 import NewsForm from 'modules/news/components/newsForm'
 import TrackView from 'modules/track/components/trackView'
 import {AuthorForm} from 'modules/author'
-import {AlbumForm} from 'modules/album'
+import {AlbumForm, AlbumView} from 'modules/album'
 
 const App = () => (
   <Layout>
@@ -20,7 +20,8 @@ const App = () => (
     <Route path="/addAlbum" component={AlbumForm} />
     <Route path="/addAuthor" component={AuthorForm} />
     <Route path="/addNews" component={NewsForm} />
-    <Route path="/track/:id" component={TrackView} />
+    <Route path="/tracks/:id" component={TrackView} />
+    <Route path="/albums/:id" component={AlbumView} />
   </Layout>
 );
 
