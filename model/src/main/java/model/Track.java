@@ -12,8 +12,8 @@ public class Track extends EntityWithId{
     private String name;
 
     @ManyToOne
-    @JoinColumn(name="author_id")
-    private Author author;
+    @JoinColumn(name="album_id")
+    private Album album;
 
     private Double rating = 0d;
     private Long voteCount = 0L;
@@ -26,9 +26,8 @@ public class Track extends EntityWithId{
         this.name = name;
     }
 
-    public Track(String name, Author author, String description) {
+    public Track(String name, String description) {
         this.name = name;
-        this.author = author;
         this.description = description;
     }
 
@@ -40,12 +39,12 @@ public class Track extends EntityWithId{
         this.name = name;
     }
 
-    public Author getAuthor() {
-        return author;
+    public Album getAlbum() {
+        return album;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
+    public void setAlbum(Album album) {
+        this.album = album;
     }
 
     public Double getRating() {

@@ -33,4 +33,8 @@ public class AuthorService {
         Assert.isTrue(pageNumber * pageSize <= allAuthors.size());
         return allAuthors.subList(pageNumber * pageSize, Math.min((pageNumber + 1) * pageSize, allAuthors.size()));
     }
+
+    public List<Author> searchByname(String prefix) {
+        return authorRepository.findByNameStartsWith(prefix);
+    }
 }

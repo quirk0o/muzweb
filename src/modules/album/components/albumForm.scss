@@ -1,0 +1,28 @@
+.albumForm{
+  margin-top: 20px;
+
+  .albumForm-form{
+    width: 30%;
+    margin: 20px auto;
+
+    .albumForm-label{
+      text-align: left;
+      padding-left: 10px;
+    }
+  }
+
+  .albumForm-segment {
+    width: 30%;
+    margin: auto;
+  }
+
+  .albumForm-dropdown {
+    margin-right: 20px;
+  }
+
+  .albumForm-button {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+
+}

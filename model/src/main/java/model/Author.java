@@ -15,7 +15,7 @@ public class Author extends EntityWithId {
 
     @OneToMany(mappedBy = "author")
     @JsonIgnoreProperties("author")
-    private List<Track> trackList;
+    private List<Album> albumList;
 
     private Double rating = 0d;
 
@@ -25,11 +25,11 @@ public class Author extends EntityWithId {
     public Author(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        trackList = new ArrayList<>();
+        albumList = new ArrayList<>();
     }
 
-    public void addTrack(Track track) {
-        trackList.add(track);
+    public void addAlbum(Album album) {
+        albumList.add(album);
     }
 
     public String getFirstName() {
@@ -48,12 +48,12 @@ public class Author extends EntityWithId {
         this.lastName = lastName;
     }
 
-    public List<Track> getTrackList() {
-        return trackList;
+    public List<Album> getAlbumList() {
+        return albumList;
     }
 
-    public void setTrackList(List<Track> trackList) {
-        this.trackList = trackList;
+    public void setAlbumList(List<Album> albumList) {
+        this.albumList = albumList;
     }
 
     public Double getRating() {
