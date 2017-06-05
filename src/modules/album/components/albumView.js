@@ -48,7 +48,7 @@ class AlbumView extends React.Component {
               ? <List divided animated selection ordered>
                   {album.tracks.map(
                     track => (
-                      <List.Item icon="note" as={Link} to={`/track/${track.id}`}>{track.name}</List.Item>
+                      <List.Item icon="note" as={Link} to={`/tracks/${track.id}`}>{track.name}</List.Item>
                     )
                   )}
                 </List>

@@ -35,7 +35,7 @@ class LayoutWithMenu extends React.Component {
   render() {
     const trackResults = this.state.tracks
       .map(el => {
-        const authorName = el.author.firstName + ' ' + (el.author.lastName || '')
+        const authorName = el.album.author.firstName + ' ' + (el.album.author.lastName || '')
         return {title: el.name, description: `Author: ${authorName}`, id: el.id, category: 'tracks'}
       })
     const albumResults = this.state.albums

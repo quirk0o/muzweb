@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react'
+import {Link} from 'react-router-dom'
 import TrackService from '../../../services/TrackService'
 import {Container, Header, Button, Rating, Popup, Grid} from 'semantic-ui-react'
 import LayoutWithMenu from 'modules/layoutWithMenu/components/layoutWithMenu'
@@ -10,7 +11,7 @@ class TrackView extends React.Component {
   constructor() {
     super()
     this.state = {
-      track: {}
+      track: {album: {}}
     }
 
     this.onRate = this.onRate.bind(this)
@@ -35,7 +36,7 @@ class TrackView extends React.Component {
 
   render() {
     const {track} = this.state
-    const authorName = !!track.author ? track.author.firstName + ' ' + (track.author.lastName || '') : ''
+    const authorName = !!track.author ? track.album.author.firstName + ' ' + (track.album.author.lastName || '') : ''
     return (
       <LayoutWithMenu>
         <div className="trackView container">
@@ -55,7 +56,7 @@ class TrackView extends React.Component {
               </Grid>
             </Popup></Header>
             <Header as="h4">Author: {authorName}</Header>
-            <Header as="h4">Album: {track.album}</Header>
+            <Header as="h4">Album: <Link to={`/albums/${track.album.id}`}>{track.album.name}</Link></Header>
             <div> {track.description} </div>
           </Container>
         </div>
