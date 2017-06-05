@@ -6,6 +6,7 @@ import {NavLink} from 'react-router-dom'
 import './layoutWithMenu.scss'
 import TrackService from '../../../services/TrackService'
 import AlbumService from '../../../services/AlbumService'
+import AuthorService from '../../../services/AuthorService'
 
 class LayoutWithMenu extends React.Component {
 
@@ -14,7 +15,8 @@ class LayoutWithMenu extends React.Component {
     this.state = {
       trackPrefix: '',
       tracks: [],
-      albums: []
+      albums: [],
+      authors: []
     }
 
     this.onSearchPrefixChange = this.onSearchPrefixChange.bind(this)
@@ -25,6 +27,7 @@ class LayoutWithMenu extends React.Component {
     if (prefix === '') return
     TrackService.searchForTrack(prefix).then(tracks => this.setState({tracks}))
     AlbumService.searchForAlbum(prefix).then(albums => this.setState({albums}))
+    AuthorService.searchForAuthor(prefix).then(authors => this.setState({authors}))
   }
 
   onResultSelect(event, data) {
@@ -43,7 +46,17 @@ class LayoutWithMenu extends React.Component {
         const authorName = el.author.firstName + ' ' + (el.author.lastName || '')
         return {title: el.name, description: `Author: ${authorName}`, id: el.id, category: 'albums'}
       })
-    const searchResults = {albums: {name: 'Albums', results: albumResults}, tracks: {name: 'Tracks', results: trackResults}}
+    const authorResults = this.state.authors
+      .map(el => {
+        const authorName = el.firstName + ' ' + (el.lastName || '')
+        return {title: authorName, id: el.id, category: 'authors'}
+      })
+
+    const searchResults = {
+      albums: {name: 'Albums', results: albumResults},
+      tracks: {name: 'Tracks', results: trackResults},
+      authors: {name: 'Authors', results: authorResults}
+    }
     console.log(searchResults)
     return (
       <div className="layout container">

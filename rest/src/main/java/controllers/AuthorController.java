@@ -22,6 +22,12 @@ public class AuthorController {
         authorService.saveAuthor(author);
     }
 
+    @RequestMapping(value ="/search/{prefix}", method = RequestMethod.GET)
+    public List<Author> searchByPrefix(@PathVariable String prefix) {
+        return prefix != null ? authorService.searchByname(prefix) :
+                authorService.searchByname("");
+    }
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Author getAuthorById(@PathVariable Long id) { return authorService.getAuthorById(id);
     }
