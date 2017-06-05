@@ -33,11 +33,6 @@ public class AuthorController {
 
     @RequestMapping(value = "/{id}/albums", method = RequestMethod.GET)
     public List<Album> getAlbums(@PathVariable(value="id") Long id) {
-        return authorService.getAuthorById(id).getAlbums();
-    }
-
-    @RequestMapping(value = "/{id}/tracks", method = RequestMethod.GET)
-    public List<Track> getTracks(@PathVariable(value="id") Long id) {
-        return authorService.getAuthorById(id).getTracks();
+        return authorService.getAuthorById(id).getAlbumList();
     }
 }

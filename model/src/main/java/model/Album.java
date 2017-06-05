@@ -1,5 +1,7 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -15,10 +17,11 @@ public class Album extends EntityWithId {
     private String releaseDate;
 
     @ManyToOne
+    @JoinColumn(name="author_id")
     private Author author;
 
-    @OneToMany
-    @JoinColumn(name="track_id")
+    @OneToMany(mappedBy = "album")
+    @JsonIgnoreProperties("album")
     private List<Track> tracks;
 
     public Album() {

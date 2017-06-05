@@ -29,8 +29,8 @@ class TrackForm extends React.Component {
   }
 
   handleCreate() {
-    const {name, author, description} = this.state
-    const newTrack = {name, author, description}
+    const {name, author, album, description} = this.state
+    const newTrack = {name, author, album, description}
 
     TrackService.createTrack(newTrack)
     this.props.history.push('/home')
