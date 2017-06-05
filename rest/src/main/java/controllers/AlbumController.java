@@ -22,6 +22,11 @@ public class AlbumController {
         albumService.saveAlbum(album);
     }
 
+    @RequestMapping(value = "/vote/{id}", method = RequestMethod.PUT)
+    public Album voteForAlbum(@PathVariable Long id, @RequestParam(value="vote") int vote) {
+        return albumService.voteForAlbum(id, vote);
+    }
+
     @RequestMapping(value ="/search/{prefix}", method = RequestMethod.GET)
     public List<Album> searchByPrefix(@PathVariable String prefix) {
         return prefix != null ? albumService.searchByname(prefix) :

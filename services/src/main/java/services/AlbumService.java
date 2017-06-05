@@ -33,6 +33,13 @@ public class AlbumService {
         return album;
     }
 
+    public Album voteForAlbum(Long id, int vote) {
+        Album album = getAlbumById(id);
+        album.vote(vote);
+        saveAlbum(album);
+        return album;
+    }
+
     public List<Album> searchByname(String prefix) {
         return albumRepository.findByNameStartsWith(prefix);
     }

@@ -18,6 +18,9 @@ class AlbumView extends React.Component {
         tracks: []
       }
     }
+
+    this.onRate = this.onRate.bind(this)
+    this.handleVote = this.handleVote.bind(this)
   }
 
   componentWillMount() {
@@ -33,6 +36,17 @@ class AlbumView extends React.Component {
     }
   }
 
+  onRate(event, data) {
+    this.setState({chosenRating: data.rating})
+  }
+
+  handleVote() {
+    AlbumService.voteForAlbum(this.state.album.id, this.state.chosenRating)
+      .then(res => {
+        this.setState({album: res})
+      })
+  }
+
   render() {
     const {album} = this.state
     const authorName = !!album.author ? album.author.firstName + ' ' + (album.author.lastName || '') : ''
@@ -40,7 +54,20 @@ class AlbumView extends React.Component {
       <LayoutWithMenu>
         <div className="albumView container">
           <Container className="albumView-main" textAlign={'center'}>
-            <Header as="h3" className="albumView-header">Title: {album.name}</Header>
+            <Header as="h3" className="albumView-header">Title: {album.name}<Popup
+              trigger={<Button className="albumView-rating-score">Rating: {!!album.rating ? album.rating.toFixed(2) : album.rating}</Button>}
+              flowing
+              hoverable
+            >
+              <Grid centered divided columns={1}>
+                <Grid.Column textAlign='center'>
+                  <div className="albumView-ratingSegment">
+                    <div><Rating className="albumView-rating" icon='star' defaultRating={0} maxRating={10} onRate={this.onRate} /></div>
+                    <div><Button className="albumView-button" onClick={this.handleVote}>Vote</Button></div>
+                  </div>
+                </Grid.Column>
+              </Grid>
+            </Popup></Header>
             <Header as="h4">Author: {authorName}</Header>
             <Header as="h4">Release Date: {album.releaseDate}</Header>
             <div> {album.description} </div>

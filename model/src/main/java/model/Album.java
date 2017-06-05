@@ -15,6 +15,8 @@ public class Album extends EntityWithId {
     private String name;
     private String description;
     private String releaseDate;
+    private Double rating = 0d;
+    private Long voteCount = 0L;
 
     @ManyToOne
     @JoinColumn(name="author_id")
@@ -61,6 +63,14 @@ public class Album extends EntityWithId {
         this.description = description;
     }
 
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setRating(Double rating) {
+        this.rating = rating;
+    }
+
     public Author getAuthor() {
         return author;
     }
@@ -71,5 +81,12 @@ public class Album extends EntityWithId {
 
     public List<Track> getTracks() {
         return tracks;
+    }
+
+    public Double vote(int vote) {
+        double wholeRating = rating * voteCount;
+        rating = (wholeRating + vote) / (voteCount + 1);
+        voteCount++;
+        return rating;
     }
 }
