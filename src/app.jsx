@@ -8,7 +8,7 @@ import {Register} from 'modules/register'
 import TrackForm from 'modules/track/components/trackForm'
 import NewsForm from 'modules/news/components/newsForm'
 import TrackView from 'modules/track/components/trackView'
-import {AuthorForm} from 'modules/author'
+import {AuthorForm, AuthorView} from 'modules/author'
 import {AlbumForm, AlbumView} from 'modules/album'
 
 const App = () => (
@@ -22,6 +22,7 @@ const App = () => (
     <Route path="/addNews" component={NewsForm} />
     <Route path="/tracks/:id" component={TrackView} />
     <Route path="/albums/:id" component={AlbumView} />
+    <Route path="/authors/:id" component={AuthorView} />
   </Layout>
 );
 
