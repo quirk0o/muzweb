@@ -24,8 +24,12 @@ class AlbumView extends React.Component {
   }
 
   componentWillMount() {
+    console.log('mount')
     const {id} = this.props.match.params
-    AlbumService.getOne(id).then(album => this.setState({album}))
+    AlbumService.getOne(id).then(album => {
+      console.log(album)
+      return this.setState({album})
+    })
   }
 
   componentWillReceiveProps(nextProps) {

@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AlbumView /> renders 1`] = `
+<div
+  class="ui center aligned container albumView-main"
+>
+  <h3
+    class="ui header albumView-header"
+  >
+    Title: 
+    Album A
+    <div
+      class="ui centered divided one column grid"
+    >
+      <div
+        class="center aligned column"
+      >
+        <div
+          class="albumView-ratingSegment"
+        >
+          <div>
+            <div
+              class="ui star rating albumView-rating"
+              role="radiogroup"
+            >
+              <div
+                aria-checked="false"
+                aria-posinset="1"
+                aria-setsize="10"
+                class="icon"
+                role="radio"
+                tabindex="0"
+              />
+              <div
+                aria-checked="false"
+                aria-posinset="2"
+                aria-setsize="10"
+                class="icon"
+                role="radio"
+                tabindex="0"
+              />
+              <div
+                aria-checked="false"
+                aria-posinset="3"
+                aria-setsize="10"
+                class="icon"
+                role="radio"
+                tabindex="0"
+              />
+              <div
+                aria-checked="false"
+                aria-posinset="4"
+                aria-setsize="10"
+                class="icon"
+                role="radio"
+                tabindex="0"
+              />
+              <div
+                aria-checked="false"
+                aria-posinset="5"
+                aria-setsize="10"
+                class="icon"
+                role="radio"
+                tabindex="0"
+              />
+              <div
+                aria-checked="false"
+                aria-posinset="6"
+                aria-setsize="10"
+                class="icon"
+                role="radio"
+                tabindex="0"
+              />
+              <div
+                aria-checked="false"
+                aria-posinset="7"
+                aria-setsize="10"
+                class="icon"
+                role="radio"
+                tabindex="0"
+              />
+              <div
+                aria-checked="false"
+                aria-posinset="8"
+                aria-setsize="10"
+                class="icon"
+                role="radio"
+                tabindex="0"
+              />
+              <div
+                aria-checked="false"
+                aria-posinset="9"
+                aria-setsize="10"
+                class="icon"
+                role="radio"
+                tabindex="0"
+              />
+              <div
+                aria-checked="false"
+                aria-posinset="10"
+                aria-setsize="10"
+                class="icon"
+                role="radio"
+                tabindex="0"
+              />
+            </div>
+          </div>
+          <div>
+            <button
+              class="ui button albumView-button"
+            >
+              Vote
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </h3>
+  <h4
+    class="ui header"
+  >
+    Author: 
+    Bob Marley
+  </h4>
+  <h4
+    class="ui header"
+  >
+    Release Date: 
+    2017/06/07
+  </h4>
+  <div>
+     
+    An album
+     
+  </div>
+  <div
+    class="ui animated divided ordered selection list"
+    role="list"
+  >
+    <a
+      class="item"
+      href="/tracks/1"
+      role="listitem"
+    >
+      Track 1
+    </a>
+    <a
+      class="item"
+      href="/tracks/1"
+      role="listitem"
+    >
+      Track 2
+    </a>
+    <a
+      class="item"
+      href="/tracks/1"
+      role="listitem"
+    >
+      Track 3
+    </a>
+    <a
+      class="item"
+      href="/tracks/1"
+      role="listitem"
+    >
+      Track 4
+    </a>
+  </div>
+</div>
+`;
