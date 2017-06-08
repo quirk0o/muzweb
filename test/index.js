@@ -5,6 +5,7 @@ import httpAdapter from 'axios/lib/adapters/http'
 
 import useChaiAssertions from './jest-chai'
 import useLazyVariables from './lazy'
+import LocalStorageMock from './local-storage'
 
 require('jest-enzyme/lib/index')
 
@@ -18,6 +19,8 @@ global.fcontext = global.fdescribe
 
 axios.defaults.adapter = httpAdapter
 process.env.API_URL = 'http://localhost'
+
+global.localStorage = new LocalStorageMock()
 
 beforeAll(() => {
   window.requestAnimationFrame = () => {
