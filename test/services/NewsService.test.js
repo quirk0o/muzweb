@@ -1,4 +1,4 @@
-import NewsService from '../../src/services/NewsService'
+import NewsService from '../../src/services/AlbumService'
 
 jest.mock('API')
 
