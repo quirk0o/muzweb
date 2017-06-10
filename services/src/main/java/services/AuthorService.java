@@ -37,4 +37,8 @@ public class AuthorService {
     public List<Author> searchByname(String prefix) {
         return authorRepository.findByNameStartsWith(prefix);
     }
+
+    public void removeAuthor(Author author) {
+        authorRepository.delete(author);
+    }
 }

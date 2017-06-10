@@ -43,4 +43,8 @@ public class AlbumService {
     public List<Album> searchByname(String prefix) {
         return albumRepository.findByNameStartsWith(prefix);
     }
+
+    public void removeAlbum(Album album) {
+        albumRepository.delete(album);
+    }
 }

@@ -70,4 +70,21 @@ public class Track extends EntityWithId{
         return rating;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Track track = (Track) o;
+
+        if (!name.equals(track.name)) return false;
+        return album != null ? album.equals(track.album) : track.album == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + (album != null ? album.hashCode() : 0);
+        return result;
+    }
 }

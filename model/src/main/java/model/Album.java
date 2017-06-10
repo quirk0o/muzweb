@@ -89,4 +89,24 @@ public class Album extends EntityWithId {
         voteCount++;
         return rating;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Album album = (Album) o;
+
+        if (!name.equals(album.name)) return false;
+        if (!releaseDate.equals(album.releaseDate)) return false;
+        return author != null ? author.equals(album.author) : album.author == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + releaseDate.hashCode();
+        result = 31 * result + (author != null ? author.hashCode() : 0);
+        return result;
+    }
 }

@@ -63,4 +63,22 @@ public class Author extends EntityWithId {
     public void setRating(Double rating) {
         this.rating = rating;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Author author = (Author) o;
+
+        if (!firstName.equals(author.firstName)) return false;
+        return lastName != null ? lastName.equals(author.lastName) : author.lastName == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = firstName.hashCode();
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        return result;
+    }
 }
